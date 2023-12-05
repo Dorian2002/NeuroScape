@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\test.cpp" />
+    <ClInclude Include="include\Hal\Core\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Hal\Core\Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
