@@ -20,9 +20,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Hal\Core\Window.h" />
+    <ClInclude Include="include\ImGui\imconfig.h" />
+    <ClInclude Include="include\ImGui\imgui.h" />
+    <ClInclude Include="include\ImGui\imgui_impl_glfw.h" />
+    <ClInclude Include="include\ImGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="include\ImGui\imgui_internal.h" />
+    <ClInclude Include="include\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="include\ImGui\imstb_textedit.h" />
+    <ClInclude Include="include\ImGui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hal\Core\Window.cpp" />
+    <ClCompile Include="src\ImGui\imgui.cpp" />
+    <ClCompile Include="src\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="src\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="src\ImGui\imgui_widgets.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
