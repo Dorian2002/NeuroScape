@@ -2,4 +2,4 @@
 NeuroScape is a C++ OpenGL rendering engine
 
 ## Architecture
-()[DorianFonsecaEngineArchitecture.png]
+![alt text](https://https://github.com/Dorian2002/NeuroScape/blob/main/DorianFonsecaEngineArchitecture.png?raw=true)
