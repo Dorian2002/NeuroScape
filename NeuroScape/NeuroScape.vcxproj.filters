@@ -13,15 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Hal">
+      <UniqueIdentifier>{73b61876-b5f4-4ab2-8156-b3caa9ac7826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Hal\Core">
+      <UniqueIdentifier>{c71dce71-8d9c-4190-82f0-5b4dfd831400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Hal">
+      <UniqueIdentifier>{f87615b7-c084-47ed-8820-e92535493ddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Hal\Core">
+      <UniqueIdentifier>{c3d3c6b1-7b4e-41ca-ba24-21bd0179f57d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Hal\Core\Window.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Hal\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hal\Core\Window.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Hal\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

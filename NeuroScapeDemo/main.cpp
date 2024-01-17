@@ -18,6 +18,8 @@
 
 #include <stdexcept>
 
+#include <hal/Core/Window.h>
+
 //Data vertices et indices
 float vertices[15] = {
 	 0.0f,  0.5f, 1.0f, 0.0f, 0.0f,
@@ -46,28 +48,7 @@ void main()
 
 int main(int argc, char** argv)
 {
-	glfwInit();
-
-	// Set context as OpenGL 4.6 Core, forward compat, with debug depending on build config
-	glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#ifndef NDEBUG
-	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
-#else /* !NDEBUG */
-	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_FALSE);
-#endif /* !NDEBUG */
-	glfwWindowHint(GLFW_SRGB_CAPABLE, GL_TRUE);
-	glfwWindowHint(GLFW_DOUBLEBUFFER, GL_TRUE);
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
-	GLFWwindow* window = glfwCreateWindow(800, 480, "NeuroScape Demo", nullptr, nullptr);
-	if (!window)
-		throw std::runtime_error("Unable to initialize GLFW");
-
-	glfwMakeContextCurrent(window);
+	ns::hal::core::Window* window = new ns::hal::core::Window(800, 480, "Neuroscape-Demo", nullptr, nullptr);
 
 	glewExperimental = true;
 	glewInit();
@@ -125,8 +106,8 @@ int main(int argc, char** argv)
 		glBindVertexArray(0);
 
 		//swap frame buffers
-		glfwSwapBuffers(window);
-	} while (!glfwWindowShouldClose(window));
+		glfwSwapBuffers(window->GetWindow());
+	} while (!glfwWindowShouldClose(window->GetWindow()));
 
 	//Delete
 	glDeleteProgram(sp);
@@ -135,7 +116,8 @@ int main(int argc, char** argv)
 	glDeleteVertexArrays(1, &vao);
 	glDeleteBuffers(2, buffers);
 
-	glfwDestroyWindow(window);
+	delete window;
+	window = nullptr;
 	glfwTerminate();
 	return 0;
 }

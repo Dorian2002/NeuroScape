@@ -4,9 +4,13 @@ namespace ns::hal::core
 {
 	class Window final
 	{
-		Window() = delete;
-		Window(int toto);
+		void Init();
 		GLFWwindow* window;
+
+	public :
+		explicit Window(int, int, const char*, GLFWmonitor*, GLFWwindow*);
+		~Window();
+		GLFWwindow* GetWindow();
 	};
 }
 
